@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block step %}1{% endblock %}
+
+{% block title %}
+Register - VISNET
+{% endblock %}
+
+{% block css %}
+
+#main_container{
+width: 1300px;
+border-radius: 40px;
+height: 610px;
+margin-top: -30px;
+background-color: rgba(0,0,0,0.2);
+}
+.form_container{
+padding-top: 40px;
+}
+#profile{
+margin: 0px 0px 0px 50px;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background-color: green;
+}
+label{
+    color: white;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"]{
+    border-radius: 10px;
+    background:rgba(255,255,255, 0.2);
+    border-bottom: 2px solid rgb(255,193,7);
+    color: white;
+}
+select option {
+    background: rgba(77,33,67,1);
+    color: #fff;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder{
+    color: white;
+}
+#btn-submit{
+    width:90%; 
+    margin-left:38px;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgb(255,193,7);
+}
+#btn-submit:hover{
+    background-color: rgba(0,0,0,0.4);
+}
+.form-control{
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgb(255,193,7);
+    color: white;
+}
+{% endblock %}
+
+{% block body %}
+<div id="main_container" class="container">
+    <div class="form_container">
+        <form action="/register.html" method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="profile">Display Picture</label>
+                    <div id="profile" class="form-group">
+                        <img  id="profile_pic" src="" alt="profile_pic">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="fn">First Name</label>
+                        <input type="text" id="fn" name="fname"  class="form-control" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="sn">Last Name </label>
+                        <input id="sn" name="sname" type="text" class="form-control" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Email </label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile"> Mobile No. </label>
+                        <input id="mobile" name="mobile" type="tel" class="form-control" placeholder="Mobile No.">
+                    </div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="add"> Short Address </label>
+                    <input id="add" type="text" class="form-control" name="address" placeholder="Where are you From..">
+                </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pov" > Perpose of Visit </label>
+                    <select id="pov" class="form-control">
+                        <option selected>-</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pv"> Who you want to Visit </label>
+                    <select id="pv" class="form-control">
+                        <option selected>-</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                    </select>
+                </div>
+            </div>
+            <input id="btn-submit" type="submit" class="btn btn-bg btn-large"  value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block step %}0{% endblock %}
+
+{% block title %}
+ScanFace - VISNET
+{% endblock %}
+
+
+{% block css %}
+#scanani{
+margin: 25px auto 0px auto;
+border-radius: 200px;
+overflow: hidden;
+width:600px;
+height: 500px;
+animation: animi-border 2s ease-in-out infinite;
+}
+
+#scanani1{
+position : relative;
+margin: auto;
+border-radius: 200px;
+overflow: hidden;
+width:650px;
+height: 550px;
+animation: animi-border 3s linear infinite;
+}
+
+.scan_icon{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    opacity: 0.2;
+    background-color: black;
+    animation: scan_icon 1.5s linear infinite;
+}
+@keyframes scan_icon {
+    0%{
+        top: 0px;
+    }
+    50%{
+        background-color: white;
+        top: 500px;
+    }
+    100%{
+        top : 0px;
+    }
+}
+@keyframes animi-border{
+    0%{
+        border-bottom : 3px solid orangered;
+    }
+    10%{
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    25%{
+        border-left : 3px solid lightskyblue;
+        border-right : 3px solid lightskyblue;
+    }
+    30%{
+        border-bottom: 3px solid transparent;
+    }
+    50%{
+        border-top: 3px solid blue;
+    }
+    60%{
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    75%{
+        border-left: 3px solid orange;
+        border-right : 3px solid orange;
+    }
+    85%{
+        border-top: 3px solid transparent;
+    }
+    100%{
+        border-bottom: 3px solid orangered;
+    }
+}
+{% endblock %}
+
+{% block body%}
+
+<div id="scanani1" style="">
+    <div id="scanani" style="">
+        <video id="video" width=600 height=500> </video>
+    </div>
+    <div class="scan_icon"></div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+// <script>
+    video = document.getElementById('video');
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+            video.srcObject = stream;
+            video.play();
+        });
+    }
+    {% endblock %}

@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block step %}2{% endblock %}
+{% block title %}
+Verify Mobile - VISNET
+{% endblock %}
+
+{% block css %}
+
+#main_container{
+width: 1300px;
+border-radius: 40px;
+height: 610px;
+margin-top: -30px;
+background-color: rgba(0,0,0,0.2);
+}
+.form_container{
+padding-top: 40px;
+}
+label{
+color: white;
+}
+input[type="text"]{
+border-radius: 10px;
+background:rgba(255,255,255, 0.2);
+border-bottom: 2px solid rgb(255,193,7);
+color: white;
+}
+
+input[type="text"]::placeholder{
+color: white;
+}
+.btn-submit{
+width:90%;
+margin-left:38px;
+background-color: rgba(0,0,0,0.2);
+color: white;
+font-size: 20px;
+border-radius: 10px;
+border: 1px solid rgba(255,255,255,0.2);
+border-bottom: 2px solid rgb(255,193,7);
+}
+
+.btn-edit{
+width: 150px;
+font-size: 16px;
+}
+
+.btn-submit:hover{
+color: white;
+background-color: rgba(0,0,0,0.4);
+}
+.form-control{
+border-radius: 10px;
+background-color: rgba(255,255,255,0.2);
+border-bottom: 2px solid rgb(255,193,7);
+color: white;
+}
+#profile{
+margin: 0px 0px 50px 50px;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background-color: green;
+}
+
+table{
+color: white;
+font-size: 20px;
+}
+td, tr{
+margin: 5px;
+padding: 3px;
+}
+
+.intrs{
+    color: darksalmon;
+}
+
+{% endblock %}
+
+{% block body %}
+<div id="main_container" class="container">
+    <div class="form_container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="profile">Display Picture</label>
+                <div id="profile" class="form-group">
+                    <img id="profile_pic" src="" alt="profile_pic">
+                </div>
+            </div>
+            <div class=" mt-5 col-md-8">
+                <table border=0>
+
+                    <tr>
+                        <th style="width:200px;">Name :</th>
+                        <td> Kevin Thoriya </td>
+                    </tr>
+                    <tr>
+                        <th>Email :</th>
+                        <td> kevinthoriya0074@gmail.com </td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No : </th>
+                        <td> 9537593503 </td>
+                    </tr>
+                    <tr>
+                        <th>From :</th>
+                        <td> Navsari </td>
+                    </tr>
+                    <tr>
+                        <th>For : </th>
+                        <td> Meeting </td>
+                    </tr>
+                    <tr>
+                        <th>To : </th>
+                        <td> HOD CSE/IT </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <a href="/register"><button class="btn-sm btn btn-submit btn-edit">Edit Details</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class=" my-5 intrs">
+        <p>Plz verify your mobile number as per rule of our university. and 
+            we have your verifed number for futher information and passing the details about your visit.
+        </p>
+    </div>
+    <div class="form-controls">
+        <form action="/verify/" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label class="mt-2" for="">OTP : </label>
+                </div>
+                <div class="form-group col-md-6">
+                    <input id="otp" type="text" name="otp" class="form-control">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <input type="submit" value="Vertify My Number" class="btn-submit" class="btn form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
