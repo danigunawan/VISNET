@@ -10,55 +10,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>QR-Scanner - ViSNET</title>
+    <title>Contact Us - ViSNET</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'back.css' %}">
     <link href="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css" rel="stylesheet" type="text/css">
     <style>
-        .scan_icon {
-            position: absolute;
-            width: 760px;
-            height: 30px;
-            top: 0px;
-            left: -30px;
-            padding-right: 20px;
-            opacity: 0.2;
-            background-color: black;
-            animation: scan_icon 1.5s linear infinite;
+        body{
+            color:white;
         }
-
-        .s1 {
-            animation: scan_icon 1.5s 0.75s linear infinite;
-        }
-
-        @keyframes scan_icon {
-            0% {
-                top: -10px;
-            }
-
-            50% {
-                background-color: white;
-                top: 530px;
-            }
-
-            100% {
-                top: -10px;
-            }
-        }
-
-        #scanani1 {
-            margin-left: 200px;
-            position: relative;
-        }
-        .info {
-            width:100%;
-            height: 150px;
-            text-align: center;
-            padding-top: 40px;
-        }
-        #text{
-            font-size: 20px;
-            color: white;
+        .pcr {
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -85,6 +47,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -106,36 +69,67 @@
                     <a class="nav-link" href="/about">About Us </a>
                 </li>
             </ul>
-            <a class="nav-link btn nav-link"  href="/admin" id="admin">Admin Login</a>
+            <a class="nav-link btn nav-link" href="/admin" id="admin">Admin Login</a>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="info">
-            <span id="text" > Waiting for QR Code...</span>
+    <div id="main_container" class=" container">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Pricing</h1>
+            <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap
+                example. It's built with default Bootstrap components and utilities with little customization.</p>
         </div>
-        <div id="scanani1" style="">
-            <div id="scanani" style="">
-                <video id="video" width=700 height=550> </video>
+        <div class="card-deck mb-3 text-center">
+            <div class="card pcr mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-warning">Sign up for free</button>
+                </div>
             </div>
-            <div class="scan_icon"></div>
-            <div class="scan_icon s1"></div>
+            <div class="card pcr mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>20 users included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-warning">Get started</button>
+                </div>
+            </div>
+            <div class="card pcr mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>30 users included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-warning">Contact us</button>
+                </div>
+            </div>
         </div>
-
     </div>
 
     <!-- Optional JavaScript -->
     <script src="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.js"></script>
-    <script>
-        video = document.getElementById('video');
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
-                video.srcObject = stream;
-                video.play();
-            });
-        }
-    </script>
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block step %}3{% endblock %}
+{% block title %}
+Get the AccessCard - VISNET
+{% endblock %}
+
+{% block css %}
+
+#main_container{
+width: 1300px;
+border-radius: 40px;
+height: 610px;
+margin-top: -30px;
+background-color: rgba(0,0,0,0.2);
+}
+.form_container{
+padding-top: 40px;
+}
+
+.btn-submit{
+width:90%;
+margin-left:38px;
+background-color: rgba(0,0,0,0.2);
+color: white;
+font-size: 20px;
+border-radius: 10px;
+border: 1px solid rgba(255,255,255,0.2);
+border-bottom: 2px solid rgb(255,193,7);
+}
+
+.btn-edit{
+width: 200px;
+font-size: 16px;
+}
+
+.btn-submit:hover{
+color: white;
+background-color: rgba(0,0,0,0.4);
+}
+img{
+width: 650px;
+height: 400px;
+margin: auto;
+}
+#text{
+    padding-top: 100px;
+    color: white;
+    font-size: 16px;
+}
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div id="main_container" class="container">
+    <div class="row">
+        <div class=" col-md-8 form_container">
+            <img src="/media/demo/demo_access.png" alt="">
+            <div class="row mt-5">
+                <div class="col-md-6"><button class="btn btn-submit btn-edit">Print Access Card</button></div>
+                <div class="col-md-6"><button class="btn btn-submit btn-edit">Resend To Email</button></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id ="text">
+                <p> This AccessCard is send to your Email.And it also can use to simless Log In and Out.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

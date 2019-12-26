@@ -10,54 +10,64 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>QR-Scanner - ViSNET</title>
+    <title>Contact Us - ViSNET</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'back.css' %}">
     <link href="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css" rel="stylesheet" type="text/css">
     <style>
-        .scan_icon {
-            position: absolute;
-            width: 760px;
-            height: 30px;
-            top: 0px;
-            left: -30px;
-            padding-right: 20px;
-            opacity: 0.2;
-            background-color: black;
-            animation: scan_icon 1.5s linear infinite;
-        }
-
-        .s1 {
-            animation: scan_icon 1.5s 0.75s linear infinite;
-        }
-
-        @keyframes scan_icon {
-            0% {
-                top: -10px;
-            }
-
-            50% {
-                background-color: white;
-                top: 530px;
-            }
-
-            100% {
-                top: -10px;
-            }
-        }
-
-        #scanani1 {
-            margin-left: 200px;
-            position: relative;
-        }
         .info {
-            width:100%;
-            height: 150px;
+            width: 100%;
+            height: 50px;
             text-align: center;
             padding-top: 40px;
         }
-        #text{
+
+        #text {
             font-size: 20px;
+            color: white;
+        }
+
+        #main_container {
+            width: 1300px;
+            border-radius: 40px;
+            height: 610px;
+            margin-top: -30px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-submit {
+            width: 90%;
+            margin-left: 38px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgb(255, 193, 7);
+        }
+
+        .btn-edit {
+            width: 200px;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        label {
+            color: white;
+        }
+
+        input[type="text"],input[type="email"],input[type="password"], #mess {
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgb(255, 193, 7);
+            color: white;
+        }
+
+        input[type="text"]::placeholder,input[type="email"]::placeholder,input[type="password"]::placeholder {
             color: white;
         }
     </style>
@@ -85,6 +95,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -106,36 +117,47 @@
                     <a class="nav-link" href="/about">About Us </a>
                 </li>
             </ul>
-            <a class="nav-link btn nav-link"  href="/admin" id="admin">Admin Login</a>
+            <a class="nav-link btn nav-link" href="/admin" id="admin">Admin Login</a>
         </div>
     </nav>
 
     <div class="container">
+        <center>
+            <h2 class="mt-3" style="color:white">Contact Us</h2>
+        </center>
         <div class="info">
-            <span id="text" > Waiting for QR Code...</span>
+            <span class="my-1" id="text"> We love to here From You.</span>
         </div>
-        <div id="scanani1" style="">
-            <div id="scanani" style="">
-                <video id="video" width=700 height=550> </video>
+
+        <div id="main_container" class=" container">
+            <div class=" mmodal-body">
+                <form action="/contact/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="8W3spd5tGzaVFhfS5HjcPuoyNOvfva0Q56c31y4kcKrJLcSukekxG2c0rHMP2vdv">
+                    <div style="height:50px;"></div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" id="cemail" placeholder="Enter your Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number (with country code)</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter your Phone Number" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe what you want to contact me for here</label>
+                        <textarea style="height:116px;" id="mess" type="text" class="form-control" id="message" placeholder="Your message" name="message" row="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit mt-2">Submit</button>
+                </form>
             </div>
-            <div class="scan_icon"></div>
-            <div class="scan_icon s1"></div>
         </div>
 
     </div>
 
     <!-- Optional JavaScript -->
     <script src="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.js"></script>
-    <script>
-        video = document.getElementById('video');
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
-                video.srcObject = stream;
-                video.play();
-            });
-        }
-    </script>
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
