@@ -19,8 +19,3 @@ In CMD go to the directary where you clone the project , and type
 python manage.py runserver
 ```
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
