@@ -139,7 +139,8 @@ padding: 3px;
         </p>
     </div>
     <div class="form-controls">
-        <form action="/verify/" method="POST">
+        <form action="/access/" method="POST">
+            {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label class="mt-2" for="">OTP : </label>
