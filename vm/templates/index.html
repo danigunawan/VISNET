@@ -4,11 +4,96 @@
 
 {% block title %}
     VISNET
+    {% endblock %}
+    
+{% block css %}
+    body{
+        color: white;
+    }
+#main_container{
+    width: 1300px;
+    border-radius: 40px;
+    height: 610px;
+    margin-top: -30px;
+    background-color: rgba(0,0,0,0.2);
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        margin: 10px 0px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    }
+    i{
+        margin: 0px 10px;
+    }
+    .step{
+        font-size: 23px;
+        margin-top: 30px;
+    }
+    #lg{
+        width: 90%;
+        transition-duration: 1s;
+        margin-left: 38px;
+    }
+    #lg:hover{
+        color: white;
+    }
+    #lga{
+        transition-duration: 1s;
+    }
+    #lg:hover  #lga{
+        margin-left: 100px;
+    }
 {% endblock %}
+
 
 {% block body %}
-{% endblock %}
 
+<div id="main_container" class="container">
+    <center style="padding-top: 20px;"><h2> 4 Easy Step   <i class="fas fa-shoe-prints"></i>    To get The <i class="fas fa-id-card"></i>  AccessCard</h2></center>
+    <hr>
+    <div class="steps">
+        <div class="step">
+            <span>
+                <i class="fas fa-angle-double-right"></i>
+            </span>
+            <span class="step-text">
+                Scan Your Face So that VISNET can identify You and Grab Your details From database.
+            </span>
+        </div>
+        <div class="step">
+            
+            <span>
+                <i class="fas fa-angle-double-right"></i>
+            </span>
+            <span class="step-text">
+                Enter the apropiate field Like perpose of Your visit and Who you want to visit.
+            </span>
+        </div>
+        <div class="step">
+            <span>
+                <i class="fas fa-angle-double-right"></i>
+            </span>
+            <span class="step-text">
+                Verify your Mobile Number To VISNET with OTP so VISNET can send you the information about your visit.
+            </span>
+        </div>
+        <div class="step">
+            
+            <span>
+                <i class="fas fa-angle-double-right"></i>
+            </span>
+            <span class="step-text">
+                Final step is to get the AccessCard for Your ID in institutations.
+            </span>
+        </div>
+    </div>
+    <div class="mt-5">
+        <a href="/scanface"><button id="lg" class="btn btn-lg btn-outline-warning "> Let's Go <span id="lga">-></span></button></a>
+    </div>   
+</div>
+
+{% endblock %}
 
 {% block js %}
 {% endblock %}

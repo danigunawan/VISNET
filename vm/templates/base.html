@@ -17,25 +17,28 @@
     <script src="https://kit.fontawesome.com/49c85d3482.js" crossorigin="anonymous"></script>
     <style>
 
-    .cdt-step-progressbar li.active .indicator, .cdt-step-progressbar.horizontal li.active .indicator{
-        border: 2px solid rgb(255,193,7);
-        color: rgb(255,193,7);
-    }
-    .cdt-step-progressbar.horizontal li.active:before{
-        background-color: rgb(255,193,7);
-    }
-    .cdt-step-progressbar li.active .title, .cdt-step-progressbar.horizontal li.active .title{
-        color: rgb(255,193,7);
-    }
-    .fas {
-        font-size: 33px;
-    }
-    #admin{
-        color: rgba(255,255,255,.5);
-    }
-    #admin:hover{
-        color: rgba(255,255,255,.8);
-    }
+        body{
+            font-family: monospace;
+        }
+        .cdt-step-progressbar li.active .indicator, .cdt-step-progressbar.horizontal li.active .indicator{
+            border: 2px solid rgb(255,193,7);
+            color: rgb(255,193,7);
+        }
+        .cdt-step-progressbar.horizontal li.active:before{
+            background-color: rgb(255,193,7);
+        }
+        .cdt-step-progressbar li.active .title, .cdt-step-progressbar.horizontal li.active .title{
+            color: rgb(255,193,7);
+        }
+        .fas {
+            font-size: 33px;
+        }
+        #admin{
+            color: rgba(255,255,255,.5);
+        }
+        #admin:hover{
+            color: rgba(255,255,255,.8);
+        }
         {% block css %}
         {% endblock %}
     </style>
@@ -90,7 +93,7 @@
     </nav>
 
 
-    <ul class="cdt-step-progressbar horizontal " style="margin: 40px auto;">
+    <ul class="cdt-step-progressbar horizontal " style="margin: 40px auto 0px auto;">
         <li>
             <span class="indicator" style="width:70px; height:70px;">
                 <i class=" pro-icon fas fa-user-tie"></i>
@@ -123,7 +126,7 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <script src="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.js"></script>
+    <script src="{%static 'tabs.js'%}"></script>
     <script>
 
         const myStepProgressBar = new Kodhus.StepProgressBar();

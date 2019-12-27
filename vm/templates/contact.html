@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{% static 'back.css' %}">
     <link href="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css" rel="stylesheet" type="text/css">
     <style>
+        body{
+            font-family: monospace;
+        }
         .info {
             width: 100%;
             height: 50px;
@@ -60,15 +63,28 @@
             color: white;
         }
 
-        input[type="text"],input[type="email"],input[type="password"], #mess {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        #mess {
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.2);
             border-bottom: 2px solid rgb(255, 193, 7);
             color: white;
         }
 
-        input[type="text"]::placeholder,input[type="email"]::placeholder,input[type="password"]::placeholder {
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder {
             color: white;
+        }
+
+        #admin {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        #admin:hover {
+            color: rgba(255, 255, 255, .8);
         }
     </style>
 </head>
@@ -77,15 +93,15 @@
     <div class="waveWrapper waveAnimation">
         <div class="waveWrapperInner bgTop">
             <div class="wave waveTop"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+                style="background-image: url('media/back/wave-top.png')"></div>
         </div>
         <div class="waveWrapperInner bgMiddle">
             <div class="wave waveMiddle"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+                style="background-image: url('media/back/wave-mid.png')"></div>
         </div>
         <div class="waveWrapperInner bgBottom">
             <div class="wave waveBottom"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+                style="background-image: url('media/back/wave-bot.png')"></div>
         </div>
     </div>
 
@@ -131,7 +147,8 @@
 
         <div id="main_container" class=" container">
             <div class=" mmodal-body">
-                <form action="/contact/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="8W3spd5tGzaVFhfS5HjcPuoyNOvfva0Q56c31y4kcKrJLcSukekxG2c0rHMP2vdv">
+                <form action="/contact/" method="post"><input type="hidden" name="csrfmiddlewaretoken"
+                        value="8W3spd5tGzaVFhfS5HjcPuoyNOvfva0Q56c31y4kcKrJLcSukekxG2c0rHMP2vdv">
                     <div style="height:50px;"></div>
                     <div class="form-group">
                         <label for="name">Your Name</label>
@@ -139,15 +156,18 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Your Email</label>
-                        <input type="email" class="form-control" id="cemail" placeholder="Enter your Email" name="email">
+                        <input type="email" class="form-control" id="cemail" placeholder="Enter your Email"
+                            name="email">
                     </div>
                     <div class="form-group">
                         <label for="phone">Your Phone Number (with country code)</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Enter your Phone Number" name="phone">
+                        <input type="text" class="form-control" id="phone" placeholder="Enter your Phone Number"
+                            name="phone">
                     </div>
                     <div class="form-group">
                         <label for="description">Describe what you want to contact me for here</label>
-                        <textarea style="height:116px;" id="mess" type="text" class="form-control" id="message" placeholder="Your message" name="message" row="4"></textarea>
+                        <textarea style="height:116px;" id="mess" type="text" class="form-control" id="message"
+                            placeholder="Your message" name="message" row="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-submit mt-2">Submit</button>
                 </form>

@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{% static 'back.css' %}">
     <link href="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css" rel="stylesheet" type="text/css">
     <style>
+        body{
+            font-family: monospace;
+        }
         .scan_icon {
             position: absolute;
             width: 760px;
@@ -50,15 +53,25 @@
             margin-left: 200px;
             position: relative;
         }
+
         .info {
-            width:100%;
+            width: 100%;
             height: 150px;
             text-align: center;
             padding-top: 40px;
         }
-        #text{
+
+        #text {
             font-size: 20px;
             color: white;
+        }
+
+        #admin {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        #admin:hover {
+            color: rgba(255, 255, 255, .8);
         }
     </style>
 </head>
@@ -106,13 +119,13 @@
                     <a class="nav-link" href="/about">About Us </a>
                 </li>
             </ul>
-            <a class="nav-link btn nav-link"  href="/admin" id="admin">Admin Login</a>
+            <a class="nav-link btn nav-link" href="/admin" id="admin">Admin Login</a>
         </div>
     </nav>
 
     <div class="container">
         <div class="info">
-            <span id="text" > Waiting for QR Code...</span>
+            <span id="text"> Waiting for QR Code...</span>
         </div>
         <div id="scanani1" style="">
             <div id="scanani" style="">
